@@ -13,7 +13,7 @@ const { stripeWebhook } = require("./controllers/billingController");
 dotenv.config();
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173" }));
+app.use(cors({ origin: process.env.CLIENT_URL || "https://golf-charity-rho-vert.vercel.app" }));
 app.post("/api/billing/webhook", express.raw({ type: "application/json" }), stripeWebhook);
 app.use(express.json());
 
