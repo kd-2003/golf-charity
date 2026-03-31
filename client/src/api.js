@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "https://golf-charity-backend-2xd5.onrender.com/api",
+  baseURL: "https://golf-charity-backend-2xd5.onrender.com/api",
 });
 
 export function setToken(token) {
