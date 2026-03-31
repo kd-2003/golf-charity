@@ -24,7 +24,6 @@ app.use(cors({
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
-res.setHeader("Access-Control-Allow-Origin", "*");
 
 app.post("/api/billing/webhook", express.raw({ type: "application/json" }), stripeWebhook);
 app.use(express.json());
