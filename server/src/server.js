@@ -13,7 +13,20 @@ const { stripeWebhook } = require("./controllers/billingController");
 dotenv.config();
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL || "https://golf-charity-rho-vert.vercel.app" }));
+// app.use(cors({ origin: process.env.CLIENT_URL || "https://golf-charity-rho-vert.vercel.app" }));
+
+import cors from "cors";
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173", 
+    "https://golf-charity-rho-vert.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+res.setHeader("Access-Control-Allow-Origin", "*");
+
 app.post("/api/billing/webhook", express.raw({ type: "application/json" }), stripeWebhook);
 app.use(express.json());
 
