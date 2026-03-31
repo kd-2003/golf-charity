@@ -15,7 +15,6 @@ const app = express();
 
 // app.use(cors({ origin: process.env.CLIENT_URL || "https://golf-charity-rho-vert.vercel.app" }));
 
-import cors from "cors";
 
 app.use(cors({
   origin: [
